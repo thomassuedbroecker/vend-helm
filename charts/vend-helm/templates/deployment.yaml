@@ -24,7 +24,7 @@ spec:
           claimName: vend-pvc-logs
       containers:
       - name: vend
-        image: CONTAINER_IMAGE_1
+        image: {{ .Values.registry_name }}/{{ .Values.registry_org }}/{{ .Values.image_name }}:{{ .Values.tag }}
         livenessProbe:
           exec:
             command: ["sh", "-c", "curl http://localhost:3000/"]

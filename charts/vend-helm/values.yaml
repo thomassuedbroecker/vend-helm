@@ -1,0 +1,8 @@
+# deployment
+
+registry_name: "quay.io"
+registry_org: "tsuedbroecker"
+tag: "v1.0.0"
+image_name: "vend-helm"
+tag: "v1.0.0"
+
