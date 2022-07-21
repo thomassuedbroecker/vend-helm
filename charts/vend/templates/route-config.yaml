@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: vend-route
+spec:
+  host: vend.OC_DOMAIN_1
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: OC_SERVICE_1

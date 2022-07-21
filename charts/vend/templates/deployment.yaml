@@ -1,0 +1,69 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: vend-deployment
+  labels:
+      app: vend
+spec:
+  selector:
+    matchLabels:
+      app: vend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: vend
+        version: v1
+    spec:
+      volumes:
+      - name: vend-volume-accesscodes
+        persistentVolumeClaim:
+          claimName: vend-pvc-accesscodes
+      - name: vend-volume-logs
+        persistentVolumeClaim:
+          claimName: vend-pvc-logs
+      containers:
+      - name: vend
+        image: CONTAINER_IMAGE_1
+        livenessProbe:
+          exec:
+            command: ["sh", "-c", "curl http://localhost:3000/"]
+          initialDelaySeconds: 20
+        readinessProbe:
+          exec:
+            command: ["sh", "-c", "curl http://localhost:3000/health"]
+          initialDelaySeconds: 40
+        env:
+        - name: VEND_USAGE
+          valueFrom:
+            configMapKeyRef:
+              name: vend-config
+              key: VEND_USAGE
+        - name: USER
+          valueFrom:
+            secretKeyRef:
+              name: vend-secrets
+              key: username
+        - name: USERPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: vend-secrets
+              key: userpassword
+        - name: ADMINUSER
+          valueFrom:
+            secretKeyRef:
+              name: vend-secrets
+              key: adminuser
+        - name: ADMINUSERPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: vend-secrets
+              key: adminpassword
+        volumeMounts:
+          - mountPath: /usr/src/app/accesscodes
+            name: vend-volume-accesscodes
+          - mountPath: /usr/src/app/logs
+            name: vend-volume-logs
+        ports:
+        - containerPort: 3000
+      restartPolicy: Always

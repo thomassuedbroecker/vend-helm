@@ -1,0 +1,6 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: vend-config
+data:
+  VEND_USAGE: "vend-helm-demo-openshift"

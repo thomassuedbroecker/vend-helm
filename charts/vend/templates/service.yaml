@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: vend-service
+  labels:
+    app: vend-app
+spec:
+  selector:
+    app: vend
+  ports:
+    - port: 3000
+      name: http
+  type: NodePort
