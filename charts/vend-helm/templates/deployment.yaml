@@ -2,17 +2,18 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: vend-deployment
+  namespace: {{ .Values.namespace_name }}
   labels:
-      app: vend
+      app: vend-app
 spec:
   selector:
     matchLabels:
-      app: vend
+      app: vend-app
   replicas: 1
   template:
     metadata:
       labels:
-        app: vend
+        app: vend-app
         version: v1
     spec:
       volumes:
@@ -24,7 +25,8 @@ spec:
           claimName: vend-pvc-logs
       containers:
       - name: vend
-        image: {{ .Values.registry_name }}/{{ .Values.registry_org }}/{{ .Values.image_name }}:{{ .Values.tag }}
+        image: {{ .Values.registry_name }}/{{ .Values.registry_org }}/{{ .Values.image_name }}:{{ .Values.image_tag }}
+        imagePullPolicy: Always
         livenessProbe:
           exec:
             command: ["sh", "-c", "curl http://localhost:3000/"]

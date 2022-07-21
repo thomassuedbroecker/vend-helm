@@ -2,7 +2,15 @@
 
 registry_name: "quay.io"
 registry_org: "tsuedbroecker"
-tag: "v1.0.0"
+image_tag: "v1.0.1"
 image_name: "vend-helm"
-tag: "v1.0.0"
+
+# all
+namespace_name: "vend"
+
+# service and route
+service_name: "vend-service"
+openshift_domain: "tsued-gitops-162e406f043e20da9b0ef0731954a894-0000.eu-de.containers.appdomain.cloud"
+
+
 
