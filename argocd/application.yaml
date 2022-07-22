@@ -1,0 +1,25 @@
+piVersion: argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vend-helm
+  namespace: openshift-gitops
+spec:
+  destination:
+    name: in-cluster
+    namespace: vend
+  project: vend-helm
+  source:
+    helm:
+      valueFiles:
+        - values.yaml
+    path: charts/vend-helm
+    repoURL: 'https://github.com/thomassuedbroecker/vend-helm'
+    targetRevision: HEAD
+  syncPolicy:
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
+      limit: 2

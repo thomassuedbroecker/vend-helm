@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: vend-helm
+  namespace: openshift-gitops
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  description: This is just an example.
+  destinations:
+    - name: in-cluster
+      namespace: vend
+      server: 'https://kubernetes.default.svc'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  sourceRepos:
+    - 'https://github.com/thomassuedbroecker/vend-helm'
+status: {}
