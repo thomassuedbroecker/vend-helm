@@ -1,6 +1,3 @@
-
-argocd-application-name: "vend-helm"
-
 # deployment
 
 registry_name: "quay.io"
@@ -13,7 +10,5 @@ namespace_name: "vend"
 
 # service and route
 service_name: "vend-service"
-openshift_domain: "tsued-gitops-162e406f043e20da9b0ef0731954a894-0000.eu-de.containers.appdomain.cloud"
-
 
 

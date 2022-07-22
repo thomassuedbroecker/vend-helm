@@ -12,5 +12,4 @@ Namespace: {{.Values.namespace_name}}
 
 # service and route
 Service name: {{.Values.service_name}}
-OpenShift domain: {{.Values.openshift_domain}}
 
