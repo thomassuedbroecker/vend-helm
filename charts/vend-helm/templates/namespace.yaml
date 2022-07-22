@@ -1,6 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  labels:
-    app.kubernetes.io/instance: {{ .Values.argocd-application-name }}
   name: {{ .Values.namespace_name }}
