@@ -1,3 +1,6 @@
+
+argocd-application-name: "vend-helm"
+
 # deployment
 
 registry_name: "quay.io"
