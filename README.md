@@ -14,13 +14,13 @@ helm install --dry-run --debug vend_helm_chart ./vend-helm/
 
 ```sh
 cd /charts
-helm install vend_helm_chart ./vend-helm
+helm install vend_helm ./vend-helm
 ```
 
 ### Uninstall helm chart
 
 ```sh
 cd /charts
-helm uninstall vend_helm_chart
+helm uninstall vend_helm
 ```
 
