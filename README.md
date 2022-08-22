@@ -21,7 +21,6 @@ helm install vend_helm_chart ./vend-helm
 
 ```sh
 cd /charts
-helm init
 helm uninstall vend_helm_chart
 ```
 
