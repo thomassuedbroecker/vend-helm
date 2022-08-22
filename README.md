@@ -14,7 +14,6 @@ helm install --dry-run --debug vend_helm_chart ./vend-helm/
 
 ```sh
 cd /charts
-helm init
 helm install vend_helm_chart ./vend-helm
 ```
 
