@@ -1,6 +1,6 @@
 # vend-helm
 
-Just deploy the vend application with a Helm chart.
+Just deploy the [vend application](https://github.com/thomassuedbroecker/vend) with a Helm chart.
 
 ### Verify the helm chart
 
