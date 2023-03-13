@@ -5,7 +5,7 @@ Just deploy the [vend application](https://github.com/thomassuedbroecker/vend) w
 ### Verify the helm chart
 
 ```sh
-cd /charts
+cd ./charts
 helm dependency update ./vend-helm/
 helm install --dry-run --debug vend_helm_chart ./vend-helm/
 ```
