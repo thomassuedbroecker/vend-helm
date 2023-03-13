@@ -7,21 +7,21 @@ Just deploy the [vend application](https://github.com/thomassuedbroecker/vend) w
 ```sh
 cd ./charts
 helm dependency update ./vend-helm/
-helm install --dry-run --debug vend_helm_chart ./vend-helm/
+helm install --dry-run --debug vend-helm-chart ./vend-helm/
 ```
 
 ### Install helm chart
 
 ```sh
 cd /charts
-helm lint
-helm install vend_helm ./vend-helm
+helm lint ./vend-helm
+helm install vend-helm ./vend-helm
 ```
 
 ### Uninstall helm chart
 
 ```sh
-cd /charts
-helm uninstall vend_helm
+cd ./charts
+helm uninstall vend-helm
 ```
 
