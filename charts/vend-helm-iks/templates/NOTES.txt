@@ -1,0 +1,15 @@
+1. Executing vend-helm chart
+
+# deployment
+
+Registry name: {{.Values.registry_name}}
+Registry org: {{.Values.registry_org}}
+Image name: {{.Values.image_name}}
+Image tag: {{.Values.image_tag}}
+
+# all
+Namespace: {{.Values.namespace_name}}
+
+# service and route
+Service name: {{.Values.service_name}}
+

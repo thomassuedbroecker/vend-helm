@@ -1,0 +1,14 @@
+# deployment
+
+registry_name: "quay.io"
+registry_org: "tsuedbroecker"
+image_tag: "v1.0.1"
+image_name: "vend-helm"
+
+# all
+namespace_name: "vend"
+
+# service and route
+service_name: "vend-service"
+
+
